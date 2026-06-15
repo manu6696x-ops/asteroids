@@ -9,12 +9,20 @@ def main():
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     pygame.display.set_caption("Asteroids")
+    clock = pygame.time.Clock()
+    dt = 0.0
+    
     while True:
         log_state()
         pygame.Surface.fill(screen, (0, 0, 0))  # Clear screen with black
         for event in pygame.event.get():
-            pass  # Placeholder for event handling
+            if event.type == pygame.QUIT:
+                return
         pygame.display.flip()
+        dt = clock.tick(60) / 1000.0  # Calculate delta time or fps
+       
+
+
     
 
 if __name__ == "__main__":
