@@ -51,7 +51,7 @@ def main():
             for shot in shots:
                 if object.collides_with(shot):
                     log_event("asteroid_shot")
-                    object.kill()
+                    object.split()
                     shot.kill()
         pygame.display.flip()
         dt = clock.tick(60) / 1000.0  # Calculate delta time or fps
